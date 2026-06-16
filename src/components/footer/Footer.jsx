@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { COMPANY, NAV_LINKS } from '../../data/constants'
+import logo from '../../assets/firstgenai-logo.png'
 
 function Footer() {
   const currentYear = new Date().getFullYear()
@@ -10,16 +11,12 @@ function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
             <div className="lg:col-span-1">
-              <Link to="/" className="flex items-center gap-2.5 group">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 shadow-lg shadow-indigo-500/20">
-                  <span className="text-white font-bold text-sm">FG</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-lg font-bold text-slate-900 leading-none">{COMPANY.name}</span>
-                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-indigo-500 mt-0.5">
-                    {COMPANY.tagline}
-                  </span>
-                </div>
+              <Link to="/" className="inline-block group">
+                <img
+                  src={logo}
+                  alt={`${COMPANY.fullName} logo`}
+                  className="h-14 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+                />
               </Link>
               <p className="mt-4 text-sm text-slate-500 leading-relaxed max-w-xs">
                 Empowering businesses with cutting-edge software solutions — from web and mobile apps to digital marketing and cloud deployment.

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { COMPANY, NAV_LINKS } from '../../data/constants'
+import logo from '../../assets/firstgenai-logo.png'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -27,19 +28,12 @@ function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 shadow-lg shadow-indigo-500/30 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-indigo-500/40">
-              <span className="text-white font-bold text-sm font-[family-name:var(--font-display)]">FG</span>
-              <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-slate-900 leading-none tracking-tight font-[family-name:var(--font-display)]">
-                {COMPANY.name}
-              </span>
-              <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-indigo-500 leading-none mt-0.5">
-                {COMPANY.tagline}
-              </span>
-            </div>
+          <Link to="/" className="group shrink-0">
+            <img
+              src={logo}
+              alt={`${COMPANY.fullName} logo`}
+              className="h-14 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
