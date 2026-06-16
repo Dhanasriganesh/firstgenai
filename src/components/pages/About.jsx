@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../ui/SectionHeading'
 import GlassCard from '../ui/GlassCard'
 import { COMPANY, UNSPLASH } from '../../data/constants'
-import { STATS } from '../../data/services'
+import { HIGHLIGHTS } from '../../data/services'
 
 const VALUES = [
   {
@@ -66,25 +66,21 @@ function About() {
                 className="rounded-3xl shadow-xl shadow-indigo-500/10 w-full h-[400px] object-cover"
                 loading="lazy"
               />
-              <div className="absolute -bottom-6 -right-6 glass-card rounded-2xl p-6 grid grid-cols-2 gap-6">
-                {STATS.slice(0, 2).map(({ value, label }) => (
-                  <div key={label} className="text-center">
-                    <div className="text-2xl font-bold gradient-text">{value}</div>
-                    <div className="text-xs text-slate-500 mt-1">{label}</div>
-                  </div>
-                ))}
+              <div className="absolute -bottom-6 -right-6 glass-card rounded-2xl p-5">
+                <div className="text-sm font-bold gradient-text">New & Ambitious</div>
+                <div className="text-xs text-slate-500 mt-1">Ready to build with you</div>
               </div>
             </div>
             <div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Story</h3>
               <p className="text-slate-500 leading-relaxed mb-4">
-                Founded with a vision to democratize access to world-class software solutions, {COMPANY.fullName} has grown into a trusted partner for businesses of all sizes. We believe every company deserves technology that works as hard as they do.
+                {COMPANY.fullName} was founded with a clear mission: to help businesses access world-class software solutions without the complexity. We&apos;re a fresh, dedicated team ready to turn your ideas into reality.
               </p>
               <p className="text-slate-500 leading-relaxed mb-4">
-                From startups launching their first product to established enterprises undergoing digital transformation, we bring the same level of dedication, expertise, and innovation to every project we undertake.
+                Whether you&apos;re launching your first product or need a reliable partner for your digital needs, we bring modern expertise, transparent communication, and a client-first mindset to every engagement.
               </p>
               <p className="text-slate-500 leading-relaxed">
-                Our team combines deep technical knowledge with a genuine understanding of business needs, ensuring that every solution we deliver is not just technically sound, but strategically valuable.
+                Our team combines strong technical skills with a genuine understanding of business goals, ensuring every solution we build is practical, scalable, and aligned with your vision.
               </p>
             </div>
           </div>
@@ -115,10 +111,10 @@ function About() {
       <section className="section-padding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {STATS.map(({ value, label }) => (
-              <GlassCard key={label} className="text-center !p-6">
-                <div className="text-3xl md:text-4xl font-bold gradient-text">{value}</div>
-                <div className="text-sm text-slate-500 mt-2">{label}</div>
+            {HIGHLIGHTS.map(({ title, description }) => (
+              <GlassCard key={title} className="text-center !p-6">
+                <div className="text-lg font-bold gradient-text">{title}</div>
+                <div className="text-sm text-slate-500 mt-2">{description}</div>
               </GlassCard>
             ))}
           </div>

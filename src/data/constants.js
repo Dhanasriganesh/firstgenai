@@ -3,6 +3,7 @@ export const COMPANY = {
   tagline: 'Technologies',
   fullName: 'FirstGenAI Technologies',
   phone: '+91 9515531463',
+  whatsapp: '919515531463',
   email: 'firstgenai.in@gmail.com',
 }
 

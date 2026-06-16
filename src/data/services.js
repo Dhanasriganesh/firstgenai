@@ -80,30 +80,9 @@ export const PROCESS_STEPS = [
   },
 ]
 
-export const TESTIMONIALS = [
-  {
-    quote:
-      'FirstGenAI delivered our e-commerce platform ahead of schedule. Their attention to detail and communication throughout the project was exceptional.',
-    author: 'Rajesh Kumar',
-    role: 'Founder, TechRetail',
-  },
-  {
-    quote:
-      'The mobile app they built for us has received outstanding user feedback. Professional team, transparent process, and great results.',
-    author: 'Priya Sharma',
-    role: 'Product Manager, HealthPlus',
-  },
-  {
-    quote:
-      'From website redesign to digital marketing, FirstGenAI helped us triple our online leads within six months. Highly recommended.',
-    author: 'Arun Patel',
-    role: 'CEO, GrowthEdge',
-  },
-]
-
-export const STATS = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '30+', label: 'Happy Clients' },
-  { value: '5+', label: 'Years Experience' },
-  { value: '99%', label: 'Client Satisfaction' },
+export const HIGHLIGHTS = [
+  { title: 'End-to-End', description: 'From idea to launch & beyond' },
+  { title: 'Modern Tech', description: 'Latest frameworks & tools' },
+  { title: 'Agile Delivery', description: 'Transparent, iterative process' },
+  { title: 'Full Support', description: 'Deployment & maintenance' },
 ]

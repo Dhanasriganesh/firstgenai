@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../ui/SectionHeading'
 import GlassCard from '../ui/GlassCard'
 import { COMPANY, UNSPLASH } from '../../data/constants'
-import { SERVICES, PROCESS_STEPS, TESTIMONIALS, STATS } from '../../data/services'
+import { SERVICES, PROCESS_STEPS, HIGHLIGHTS } from '../../data/services'
 
 const SERVICE_ICONS = {
   'web-development': (
@@ -72,10 +72,10 @@ function Home() {
                 </Link>
               </div>
               <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {STATS.map(({ value, label }) => (
-                  <div key={label} className="text-center sm:text-left">
-                    <div className="text-2xl md:text-3xl font-bold gradient-text">{value}</div>
-                    <div className="text-xs sm:text-sm text-slate-500 mt-1">{label}</div>
+                {HIGHLIGHTS.map(({ title, description }) => (
+                  <div key={title} className="text-center sm:text-left">
+                    <div className="text-base md:text-lg font-bold gradient-text">{title}</div>
+                    <div className="text-xs sm:text-sm text-slate-500 mt-1">{description}</div>
                   </div>
                 ))}
               </div>
@@ -93,20 +93,20 @@ function Home() {
               </div>
               <div className="absolute -bottom-6 -left-4 sm:-left-8 glass-card !p-4 rounded-2xl max-w-[220px]">
                 <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
                     <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-slate-900">99% Satisfaction</div>
-                    <div className="text-xs text-slate-500">Client Success Rate</div>
+                    <div className="text-sm font-bold text-slate-900">Full-Stack</div>
+                    <div className="text-xs text-slate-500">Web, Mobile & Cloud</div>
                   </div>
                 </div>
               </div>
               <div className="absolute -top-4 -right-4 sm:-right-8 glass-card !p-4 rounded-2xl">
-                <div className="text-2xl font-bold gradient-text">50+</div>
-                <div className="text-xs text-slate-500">Projects Done</div>
+                <div className="text-sm font-bold gradient-text">Fresh & Focused</div>
+                <div className="text-xs text-slate-500">Built for your vision</div>
               </div>
             </div>
           </div>
@@ -212,29 +212,19 @@ function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Our Commitment */}
       <section className="section-padding bg-gradient-to-b from-white to-violet-50/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            badge="Testimonials"
-            title="What Our Clients Say"
-            subtitle="Don't just take our word for it — hear from businesses we've helped transform."
+            badge="Our Commitment"
+            title="What You Can Expect From Us"
+            subtitle="As a new company, we bring fresh energy, modern expertise, and undivided attention to every client we work with."
           />
-          <div className="grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map(({ quote, author, role }) => (
-              <GlassCard key={author} className="flex flex-col">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-sm text-slate-600 leading-relaxed flex-1 italic">&ldquo;{quote}&rdquo;</p>
-                <div className="mt-6 pt-4 border-t border-indigo-100/60">
-                  <div className="font-bold text-slate-900 text-sm">{author}</div>
-                  <div className="text-xs text-slate-400 mt-0.5">{role}</div>
-                </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {HIGHLIGHTS.map(({ title, description }) => (
+              <GlassCard key={title} className="text-center">
+                <h3 className="text-lg font-bold gradient-text mb-2">{title}</h3>
+                <p className="text-sm text-slate-500">{description}</p>
               </GlassCard>
             ))}
           </div>
